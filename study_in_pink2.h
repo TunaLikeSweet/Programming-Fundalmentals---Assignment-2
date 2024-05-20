@@ -435,8 +435,8 @@ private:
 
 public:
     PassingCard(const string &challenge) : BaseItem(PASSING_CARD) {}
-   bool canUse(Character *obj, Robot *robot) override;
-   void use(Character *obj, Robot *robot) override;
+    bool canUse(Character *obj, Robot *robot) override;
+    void use(Character *obj, Robot *robot) override;
 };
 
 class BaseBag
