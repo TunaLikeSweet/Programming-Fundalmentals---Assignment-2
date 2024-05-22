@@ -783,7 +783,11 @@ void EnergyDrink::use(Character *obj, Robot *robot)
 
 bool FirstAid::canUse(Character *obj, Robot *robot)
 {
-    return (obj->getHP() <= 100 || obj->getEXP() <= 350);
+    if (obj->getHP() <= 100 || obj->getEXP() <= 350)
+        return true;
+    else
+        return false;
+    return false;
 }
 
 void FirstAid::use(Character *obj, Robot *robot)

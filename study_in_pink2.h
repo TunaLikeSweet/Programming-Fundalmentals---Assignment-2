@@ -156,7 +156,8 @@ protected:
     Position prev;
 
 public:
-    Character(int index, const Position init_pos, Map *map, const string &name);
+    Character(int index, const Position pos, Map *map, const string &name = "");
+    virtual Position getNextPosition() = 0;
     Position getPrevPosition() const;
     int getEXP() const { return init_exp; }
     int getHP() const { return init_hp; }
@@ -462,7 +463,7 @@ public:
     virtual bool insert(BaseItem *item) = 0;
     virtual BaseItem *get() = 0;
     virtual BaseItem *get(ItemType itemType) = 0;
-    int getCount() const { return count; }
+
     void SwapItem(BaseBag &otherCharacter, ItemType itemType);
     string str() const;
     ~BaseBag() { delete head; }
