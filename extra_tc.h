@@ -541,64 +541,64 @@ public:
         ::tc_1067();
     }
     static void tc_1070() {
-        ::tc_1070;
+        ::tc_1070();
     }
     static void tc_1094() {
         ::tc_1094();
     }
     static void tc_1099() {
-        ::tc_1099;
+        ::tc_1099();
     }
     static void tc_1109() {
-        ::tc_1109;
+        ::tc_1109();
     }
     static void tc_1114() {
-        ::tc_1114;
+        ::tc_1114();
     }
     static void tc_1120() {
-        ::tc_1120;
+        ::tc_1120();
     }
     static void tc_1132() {
-        ::tc_1132;
+        ::tc_1132();
     }
     static void tc_1138() {
-        ::tc_1138;
+        ::tc_1138();
     }
     static void tc_1143() {
-        ::tc_1143;
+        ::tc_1143();
     }
     static void tc_1153() {
-        ::tc_1153;
+        ::tc_1153();
     }
     static void tc_1159() {
-        ::tc_1159;
+        ::tc_1159();
     }
     static void tc_1167() {
-        ::tc_1167;
+        ::tc_1167();
     }
     static void tc_1171() {
-        ::tc_1171;
+        ::tc_1171();
     }
     static void tc_1181() {
-        ::tc_1181;
+        ::tc_1181();
     }
     static void tc_1185() {
-        ::tc_1185;
+        ::tc_1185();
     }
     static void tc_1199() {
-        ::tc_1199;
+        ::tc_1199();
     }
     static void tc_1211() {
-        ::tc_1211;
+        ::tc_1211();
     }
     static void tc_1223() {
-        ::tc_1223;
+        ::tc_1223();
     }
     static void tc_1235() {
-        ::tc_1235;
+        ::tc_1235();
     }
     static void tc_1247() {
-        ::tc_1247;
+        ::tc_1247();
     }
     static void tc_1278() {
         cout << "----- Testcase 278 -----" << endl;
@@ -627,10 +627,10 @@ public:
     }
     
     static void tc_1297() {
-        ::tc_1297;
+        ::tc_1297();
     }
     static void tc_1323() {
-        ::tc_1323;
+        ::tc_1323();
     }
     static void tc_1286() {
         cout << "----- Testcase 286 -----" << endl;
