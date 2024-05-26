@@ -95,7 +95,6 @@ Map::~Map()
     {
         for (int j = 0; j < num_cols; j++)
             delete map[i][j];
-
         delete[] map[i];
     }
     delete[] map;
@@ -114,10 +113,7 @@ Position::Position(const string &str_pos)
     c = stoi(str_pos.substr(pos + 1, str_pos.length() - pos - 2));
 }
 
-string Position::str() const
-{
-    return "(" + to_string(r) + "," + to_string(c) + ")";
-}
+string Position::str() const { return "(" + to_string(r) + "," + to_string(c) + ")"; }
 
 bool Position::isEqual(int in_r, int in_c) const { return r == in_r && c == in_c; }
 bool Position::isEqual(const Position &pos) const { return r == pos.r && c == pos.c; }
@@ -167,7 +163,7 @@ Position Sherlock::getNextPosition()
             next_pos.setCol(next_pos.getCol() + 1); // Di chuyển sang phải.
             break;
         }
-        steps = (++steps) % moving_rule.length();
+        steps = (++steps) % moving_rule.length(); // Cập nhật bước di chuyển.
     }
     else
         return Position::npos;
@@ -714,7 +710,7 @@ Position RobotSW::getNextPosition()
 {
     int minDistance = INT_MAX;
     Position nextPos = Position::npos;
-    int directions[4][2] = {{-2, 0}, {0, 2}, {2, 0}, {0, -2}}; // Up, Right, Down, Left
+    int directions[8][2] = {{-2, 0}, {-1, 1}, {0, 2}, {1, 1}, {2, 0}, {1, -1}, {0, -2}, {-1, -1}}; // 8 directions base on clock-wise
     for (int i = 0; i < 4; i++)
     {
         Position newPos = Position(this->pos.getRow() + directions[i][0], this->pos.getCol() + directions[i][1]);
@@ -1012,7 +1008,7 @@ void StudyPinkProgram::run(bool verbose)
             {
                 BaseItem *item = robotC->getItem();
                 watson->getBag()->insert(item);
-                // Cần thêm logic giữ chân Watson
+                watson->setMovingRule(""); // Watson dừng lại
                 BaseItem *Item = watson->getBag()->get();
                 if (Item != nullptr)
                     Item->use(watson, nullptr);
