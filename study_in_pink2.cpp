@@ -711,7 +711,7 @@ Position RobotSW::getNextPosition()
     int minDistance = INT_MAX;
     Position nextPos = Position::npos;
     int directions[8][2] = {{-2, 0}, {-1, 1}, {0, 2}, {1, 1}, {2, 0}, {1, -1}, {0, -2}, {-1, -1}}; // 8 directions base on clock-wise
-    for (int i = 0; i < 4; i++)
+    for (int i = 0; i < 8; i++)
     {
         Position newPos = Position(this->pos.getRow() + directions[i][0], this->pos.getCol() + directions[i][1]);
         if (!this->map->isValid(newPos, this))
