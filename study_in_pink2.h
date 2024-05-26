@@ -214,6 +214,7 @@ public:
     Watson(int index, const string &moving_rule, const Position &init_pos, Map *map, int init_hp, int init_exp);
     Watson() {}
     Position getNextPosition() override;
+    string setMovingRule(const string &newRule) { return this->moving_rule = newRule; }
     WatsonBag *getBag() { return watsonBag; }
     // void move() override;
     string str() const override;
@@ -569,4 +570,5 @@ public:
 /// END OF STUDENT'S ANSWER
 ////////////////////////////////////////////////
 #endif /* _H_STUDY_IN_PINK_2_H_ */
+
 
