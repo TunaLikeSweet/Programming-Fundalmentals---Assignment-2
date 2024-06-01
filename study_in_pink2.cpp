@@ -956,33 +956,30 @@ void StudyPinkProgram::run(bool verbose)
         for (int i = 0; i < arr_mv_objs->size(); ++i)
         {
             arr_mv_objs->get(i)->move();
-            if (criminal->steps % 3 == 0)
+            bool isCreated = false
+            if (criminal->steps != 0 && criminal->steps % 3 == 0 && !isCreated)
             {
                 if (!arr_mv_objs->isFull())
                 {
-                    if (istep == 2)
+                    if (arr_mv_objs->size == 3)
                     {
                         robotC = new RobotC(arr_mv_objs->size(), criminal->getPrevPosition(), map, criminal);
                         arr_mv_objs->add(robotC);
-                        criminal->steps = 0;
                     }
-                    else if (criminal->distanceToSherlock() < criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock nhỏ hơn khoảng cách từ Criminal đến Watson
+                    else if (arr_mv_objs->size() != 3 && criminal->distanceToSherlock() < criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock nhỏ hơn khoảng cách từ Criminal đến Watson
                     {
                         robotS = new RobotS(arr_mv_objs->size(), criminal->getPrevPosition(), map, criminal, sherlock);
                         arr_mv_objs->add(robotS);
-                        criminal->steps = 0;
                     }
-                    else if (criminal->distanceToSherlock() > criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock lớn hơn khoảng cách từ Criminal đến Watson
+                    else if (arr_mv_objs->size() != 3 && criminal->distanceToSherlock() > criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock lớn hơn khoảng cách từ Criminal đến Watson
                     {
                         robotW = new RobotW(arr_mv_objs->size(), criminal->getPrevPosition(), map, criminal, watson);
                         arr_mv_objs->add(robotW);
-                        criminal->steps = 0;
                     }
-                    else if (criminal->distanceToSherlock() == criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock bằng khoảng cách từ Criminal đến Watson
+                    else if (arr_mv_objs->size() != 3 && criminal->distanceToSherlock() == criminal->distanceToWatson()) // Nếu khoảng cách từ Criminal đến Sherlock bằng khoảng cách từ Criminal đến Watson
                     {
                         robotSW = new RobotSW(arr_mv_objs->size(), criminal->getPrevPosition(), map, criminal, sherlock, watson);
                         arr_mv_objs->add(robotSW);
-                        criminal->steps = 0;
                     }
                 }
             }
